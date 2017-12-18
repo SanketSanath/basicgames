@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head><title>Rock Paper and Scissors</title>
+    <script>
+        function play(uInput){
+            var cInput=compInput(uInput);
+            var result= document.getElementById("result");
+            if(uInput==cInput){
+                result.innerHTML="game tie\nplay again";
+            }
+            else if((uInput+1)%3==cInput){
+                result.innerHTML="You loose";
+            }
+            else if((cInput+1)%3==uInput){
+                result.innerHTML="You Won";
+            }
+        }
+        function compInput(uInput){
+            var arr=["rock","paper","scissor"];
+            var i=Math.floor(Math.random()*arr.length);
+            console.log(arr[i]);
+            var x=document.getElementById("com");
+            var y=document.getElementById("you");
+            y.innerHTML="you selected "+ arr[uInput]
+            x.innerHTML="computer selected "+ arr[i];
+            return i;
+        }
+    </script>
+    <style>
+        body{font-family: arial;}
+        button>img{ height: 50px; width: 50px;}
+        button{
+            padding: 0; margin: 0;
+            border-color: transparent;
+            background-color: transparent;
+        }
+    </style>
+    </head>
+<body>
+    <header><h1>Rock Paper Scissor</h1></header>
+    <div><p id="com"></p><p id="you"></p>
+        <p id="result">Start Playing</p>
+    </div>
+    <button onclick="play('0')"><img src="images/rock.jpg"></button>
+    <button onclick="play('1')"><img src="images/paper.jpg"></button>
+    <button onclick="play('2')"><img src="images/scissor.jpg"></button>
+</body>
+</html>

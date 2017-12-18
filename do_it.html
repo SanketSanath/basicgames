@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task!!</title>
+    
+    <script>
+        var words1=new Array();
+        var words2=new Array();
+        
+        function enter_name(){
+            var textInput= document.getElementById("name_entry");
+            var nameis= textInput.value;
+            var l=words1.length;
+            words1[l]=nameis;
+            textInput.value="";
+        }
+        function enter_work(){
+            var textInput= document.getElementById("work_entry");
+            var workis= textInput.value;
+            var l=words2.length;
+            words2[l]=workis;
+            textInput.value="";
+        }
+        function xkcd(){
+            var name= Math.floor(Math.random() * words1.length);
+            var work=Math.floor(Math.random() * words2.length);
+            var line=words1[name]+" will "+words2[work];
+            var place= document.getElementById("place");
+            place.innerHTML= line;
+        }
+    </script>
+    
+    <style>
+        h1{
+           font-size: 60px; 
+        }
+        body{
+            font-size: 40px;
+            color: #404040;
+            background-color: cornsilk;
+            font-family: comic sans ms;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        button{
+            height: 100px;
+            width: 100%;
+            font-size: 40px;
+            color:white;
+            background-color: #505050;
+            margin-top: 20px;
+            padding: 20px;
+            box-shadow: 4px 4px 4px #222222;
+        }
+        input{
+            height: 80px;
+            width: 100%;
+            font-size: 40px;
+        }
+        input:focus{
+            background-color: #222222;
+            color: orange;
+        }
+        button:active{
+            box-shadow: 4px 4px 10px #222222 inset;
+            
+        }
+        h3{
+            padding:20px; margin: 10px; font-weight: bold; color: #202020;  
+            height: 200px; width: inherit;
+        }
+        legend{
+            font-family: sans-serif;
+        }
+        footer{
+            margin-top: 500px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    <img src="images/doit_banner.png">
+    <h1>enter these things</h1>
+    <fieldset>
+    <legend>enter your freinds name one by one</legend>
+        <input id="name_entry" type="text" value="" placeholder=" enter names one by one"/> <br/>
+        <button onclick="enter_name()">add name</button>
+    </fieldset>
+    <fieldset>
+    <legend>work list</legend>
+        <input id="work_entry" type="text" value="" placeholder=" e.g. dance, sing, jump 100 times"/> <br/>
+        <button onclick="enter_work()">add work</button>
+    </fieldset>
+    <h1>Do it</h1>
+<h3 id="place">Do whatever here will be written</h3>
+    <button onclick="xkcd()">show</button>
+    <footer>
+    </footer>
+    </body>
+</html>

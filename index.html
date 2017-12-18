@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Basic Games</title>
+    <style>
+        body{
+            padding: 50px;
+        }
+        .cell{
+            background: black;
+            color:white;
+            border-radius: 6px;
+        }
+        #container{
+            height: auto;
+            display: grid;
+            grid-gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            grid-template-rows: auto;
+        }
+        .text{
+            text-align: center;
+        }
+        .image{
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    </head>
+<body>
+    <div id="container">
+        <div class="cell"><a href="RockPaperScissors.html"><img src="images/rps.jpg" class="image"></a><p class="text">Rock Paper Scissor</p></div>
+        <div class="cell"><a href="do_it.html"><img src="images/doit.jpg" class="image"></a><p class="text">Do It Challenge</p></div>
+        <div class="cell"><img src="images/chair.jpg" class="image"><p class="text">Nothing :(</p></div>
+        <div class="cell"><img src="images/chair.jpg" class="image"><p class="text">Nothing :(</p></div>
+        <div class="cell"><img src="images/chair.jpg" class="image"><p class="text">Nothing :(</p></div>
+        <div class="cell"><img src="images/chair.jpg" class="image"><p class="text">Nothing :(</p></div>
+
+    </div>
+    </body>
+</html>
